@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.0</version>
+    <date>2019-09-23T16:00:08Z</date>
+    <value_maps>
+        <value_map>
+            <name>Huawei_HEALTH_STATUS</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Unknown</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Normal</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>Fault</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>Pre-fail</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>Partially broken</newvalue>
+                </mapping>
+                <mapping>
+                    <value>5</value>
+                    <newvalue>Degraded</newvalue>
+                </mapping>
+                <mapping>
+                    <value>6</value>
+                    <newvalue>Bad sectors found</newvalue>
+                </mapping>
+                <mapping>
+                    <value>7</value>
+                    <newvalue>Bit errors found</newvalue>
+                </mapping>
+                <mapping>
+                    <value>8</value>
+                    <newvalue>Consistent</newvalue>
+                </mapping>
+                <mapping>
+                    <value>9</value>
+                    <newvalue>Inconsistent</newvalue>
+                </mapping>
+                <mapping>
+                    <value>10</value>
+                    <newvalue>Busy</newvalue>
+                </mapping>
+                <mapping>
+                    <value>11</value>
+                    <newvalue>No input</newvalue>
+                </mapping>
+                <mapping>
+                    <value>12</value>
+                    <newvalue>Low battery</newvalue>
+                </mapping>
+                <mapping>
+                    <value>13</value>
+                    <newvalue>Single link fault</newvalue>
+                </mapping>
+                <mapping>
+                    <value>14</value>
+                    <newvalue>Invalid</newvalue>
+                </mapping>
+                <mapping>
+                    <value>15</value>
+                    <newvalue>Write protect</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>

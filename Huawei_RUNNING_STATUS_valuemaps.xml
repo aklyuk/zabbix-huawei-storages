@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.0</version>
+    <date>2019-09-23T16:00:42Z</date>
+    <value_maps>
+        <value_map>
+            <name>Huawei_RUNNING_STATUS</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Unknown</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Normal</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>Running</newvalue>
+                </mapping>
+                <mapping>
+                    <value>5</value>
+                    <newvalue>sleep in high temperature</newvalue>
+                </mapping>
+                <mapping>
+                    <value>10</value>
+                    <newvalue>Link_up</newvalue>
+                </mapping>
+                <mapping>
+                    <value>11</value>
+                    <newvalue>Link_down</newvalue>
+                </mapping>
+                <mapping>
+                    <value>12</value>
+                    <newvalue>powering on</newvalue>
+                </mapping>
+                <mapping>
+                    <value>13</value>
+                    <newvalue>powered off</newvalue>
+                </mapping>
+                <mapping>
+                    <value>14</value>
+                    <newvalue>pre-copy</newvalue>
+                </mapping>
+                <mapping>
+                    <value>16</value>
+                    <newvalue>reconstruction</newvalue>
+                </mapping>
+                <mapping>
+                    <value>27</value>
+                    <newvalue>online</newvalue>
+                </mapping>
+                <mapping>
+                    <value>28</value>
+                    <newvalue>offline</newvalue>
+                </mapping>
+                <mapping>
+                    <value>32</value>
+                    <newvalue>balancing</newvalue>
+                </mapping>
+                <mapping>
+                    <value>48</value>
+                    <newvalue>charging</newvalue>
+                </mapping>
+                <mapping>
+                    <value>49</value>
+                    <newvalue>charging completed</newvalue>
+                </mapping>
+                <mapping>
+                    <value>50</value>
+                    <newvalue>discharging</newvalue>
+                </mapping>
+                <mapping>
+                    <value>53</value>
+                    <newvalue>initializing</newvalue>
+                </mapping>
+                <mapping>
+                    <value>103</value>
+                    <newvalue>power-on failed</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
