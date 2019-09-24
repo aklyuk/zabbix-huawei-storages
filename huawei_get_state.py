@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 import os
@@ -10,10 +10,10 @@ import subprocess
 import tempfile
 import sys
 import urllib3
-urllib3.disable_warnings()
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-#from requests.packages.urllib3.exceptions import InsecureRequestWarning
-#requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+#urllib3.disable_warnings()
+#urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
 def api_connect(api_user, api_password, api_ip, api_port):
@@ -38,8 +38,8 @@ def api_logout(api_ip, api_port, api_cookies, device_id, iBaseToken):
 
 
 def convert_to_zabbix_json(data):
-	output = json.dumps({"data": data}, indent = None, separators = (',',': '))
-	return output
+        output = json.dumps({"data": data}, indent = None, separators = (',',': '))
+        return output
 
 
 
@@ -66,7 +66,7 @@ def discovering_resources(api_user, api_password, api_ip, api_port, storage_name
 	iBaseToken = api_connection[0]['data']['iBaseToken']
 	api_cookies = api_connection[1]
 
-	somethings = []
+	something = []
 	for resource in list_resources:
 		resource_url = "https://{0}:{1}/deviceManager/rest/{2}/{3}".format(api_ip, api_port, device_id, resource)
 		resource_info = requests.get(resource_url, verify=False, cookies = api_cookies)
@@ -91,13 +91,13 @@ def discovering_resources(api_user, api_password, api_ip, api_port, storage_name
 
 		converted_resource = convert_to_zabbix_json(discovered_resource)
 		timestampnow = int(time.time())
-		somethings.append("%s %s %s %s" % (storage_name, resource, timestampnow, converted_resource))
+		something.append("%s %s %s %s" % (storage_name, resource, timestampnow, converted_resource))
 
 	exit_code = api_logout(api_ip, api_port, api_cookies, device_id, iBaseToken)
 #        if exit_code != 0:
 #		return 5
 
-	return send_data_to_zabbix(somethings, storage_name)
+	return send_data_to_zabbix(something, storage_name)
 	
 
 
@@ -138,7 +138,7 @@ def get_status_resources(api_user, api_password, api_ip, api_port, storage_name,
 				state_resources.append("%s %s %s %s" % (storage_name, key_status, timestampnow, one_res['RUNNINGSTATUS']))
 
 
-				# Блок кода, подсчитывает сумму "выделенных объемов" лунов для каждого пула. Нужно для подсчета подписанного места на каждом пуле
+			# Блок кода, подсчитывает сумму "выделенных объемов" лунов для каждого пула. Нужно для подсчета подписанного места на каждом пуле
 				pool_name = one_res['PARENTNAME']
 				abr = list(subscribed_capacity_pools.keys()) #Конвертируем ключи словаря в список, что бы было легче сравнивать
 				if abr.count(pool_name) == 0: #А есть ли в словаре такой лун?
@@ -209,10 +209,10 @@ def main():
 
 	if arguments.discovery:
 		result_discovery = discovering_resources(arguments.api_user, arguments.api_password, arguments.api_ip, arguments.api_port, arguments.storage_name, list_resources)
-		print result_discovery
+		print (result_discovery)
 	elif arguments.status:
 		result_status = get_status_resources(arguments.api_user, arguments.api_password, arguments.api_ip, arguments.api_port, arguments.storage_name, list_resources)
-		print result_status
+		print (result_status)
 
 
 if __name__ == "__main__":
