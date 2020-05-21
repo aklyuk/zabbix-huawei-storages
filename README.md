@@ -13,3 +13,5 @@ Script must return 0 in case of success
 
 To get value of metrics nedd run script on linux console ./huawei_get_state.py --api_ip=xxx.xxx.xxx.xxx --api_port=8088 --api_user=username --api_password='password' --storage_name="storage_name_in_zabbix" --status
 Script must return 0 in case of success
+
+- Return code 1 or 2 is zabbix_sender return code. Read here - https://www.zabbix.com/documentation/4.4/manpages/zabbix_sender
